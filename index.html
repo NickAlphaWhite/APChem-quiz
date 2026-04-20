@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IonCore | AP Chem Typing Quiz</title>
+    <title>IonCore.</title>
     <style>
         :root {
             --bg: #000000;
@@ -82,40 +82,42 @@
 
 <div class="container">
     <h1 onclick="location.reload()">IonCore.</h1>
-    <p class="intro">Master the Barron's 20. Type the name to verify.</p>
+    <p class="intro">Categorized by Central Element. Click the title to restart.</p>
     
     <div class="counter-label" id="counter">IONS MASTERED: 0 / 20</div>
     <div class="progress-track"><div class="progress-fill" id="progress"></div></div>
 
-    <div class="section-title">Common Ions</div>
+    <div class="section-title">Nitrogen Center</div>
     <div class="ion-card" data-ans="ammonium"><div class="formula">NH<sub>4</sub><sup>+</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="nitrate"><div class="formula">NO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="nitrite"><div class="formula">NO<sub>2</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+
+    <div class="section-title">Carbon Center</div>
     <div class="ion-card" data-ans="carbonate"><div class="formula">CO<sub>3</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="bicarbonate"><div class="formula">HCO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
 
-    <div class="section-title">Halogen Series</div>
+    <div class="section-title">Chlorine Center</div>
     <div class="ion-card" data-ans="perchlorate"><div class="formula">ClO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="chlorate"><div class="formula">ClO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="chlorite"><div class="formula">ClO<sub>2</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="hypochlorite"><div class="formula">ClO<sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
 
-    <div class="section-title">Nitrogen & Sulfur</div>
-    <div class="ion-card" data-ans="nitrate"><div class="formula">NO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="nitrite"><div class="formula">NO<sub>2</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="section-title">Sulfur Center</div>
     <div class="ion-card" data-ans="sulfate"><div class="formula">SO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="hydrogen sulfate"><div class="formula">HSO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="bisulfate"><div class="formula">HSO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="sulfite"><div class="formula">SO<sub>3</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="hydrogen sulfite"><div class="formula">HSO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="bisulfite"><div class="formula">HSO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="thiosulfate"><div class="formula">S<sub>2</sub>O<sub>3</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
 
-    <div class="section-title">Oxidizers & Metals</div>
-    <div class="ion-card" data-ans="permanganate"><div class="formula">MnO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="dichromate"><div class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="chromate"><div class="formula">CrO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-
-    <div class="section-title">Phosphorus Family</div>
+    <div class="section-title">Phosphorus Center</div>
     <div class="ion-card" data-ans="phosphate"><div class="formula">PO<sub>4</sub><sup>3-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="hydrogen phosphate"><div class="formula">HPO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="dihydrogen phosphate"><div class="formula">H<sub>2</sub>PO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+
+    <div class="section-title">Metal Centers</div>
+    <div class="ion-card" data-ans="permanganate"><div class="formula">MnO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="dichromate"><div class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="chromate"><div class="formula">CrO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
 </div>
 
 <script>
