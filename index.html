@@ -95,4 +95,62 @@
     <div class="section-title">Halogen Series</div>
     <div class="ion-card" data-ans="perchlorate"><div class="formula">ClO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
     <div class="ion-card" data-ans="chlorate"><div class="formula">ClO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
-    <div class="ion-card" data-ans="chlorite"><div class="formula">ClO<sub>2</sub>
+    <div class="ion-card" data-ans="chlorite"><div class="formula">ClO<sub>2</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="hypochlorite"><div class="formula">ClO<sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+
+    <div class="section-title">Nitrogen & Sulfur</div>
+    <div class="ion-card" data-ans="nitrate"><div class="formula">NO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="nitrite"><div class="formula">NO<sub>2</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="sulfate"><div class="formula">SO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="hydrogen sulfate"><div class="formula">HSO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="sulfite"><div class="formula">SO<sub>3</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="hydrogen sulfite"><div class="formula">HSO<sub>3</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="thiosulfate"><div class="formula">S<sub>2</sub>O<sub>3</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+
+    <div class="section-title">Oxidizers & Metals</div>
+    <div class="ion-card" data-ans="permanganate"><div class="formula">MnO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="dichromate"><div class="formula">Cr<sub>2</sub>O<sub>7</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="chromate"><div class="formula">CrO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+
+    <div class="section-title">Phosphorus Family</div>
+    <div class="ion-card" data-ans="phosphate"><div class="formula">PO<sub>4</sub><sup>3-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="hydrogen phosphate"><div class="formula">HPO<sub>4</sub><sup>2-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+    <div class="ion-card" data-ans="dihydrogen phosphate"><div class="formula">H<sub>2</sub>PO<sub>4</sub><sup>-</sup></div><input type="text" class="quiz-input" placeholder="Name..."></div>
+</div>
+
+<script>
+    const inputs = document.querySelectorAll('.quiz-input');
+    const progressFill = document.getElementById('progress');
+    const counterLabel = document.getElementById('counter');
+
+    inputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            const card = e.target.closest('.ion-card');
+            const answer = card.getAttribute('data-ans');
+            const value = e.target.value.toLowerCase().trim();
+
+            if (value === answer) {
+                card.classList.add('correct');
+                e.target.disabled = true;
+                e.target.value = answer.charAt(0).toUpperCase() + answer.slice(1);
+                updateUI();
+            }
+        });
+    });
+
+    function updateUI() {
+        const total = inputs.length;
+        const correct = document.querySelectorAll('.ion-card.correct').length;
+        const percent = (correct / total) * 100;
+        
+        progressFill.style.width = percent + '%';
+        counterLabel.innerText = `IONS MASTERED: ${correct} / ${total}`;
+        
+        if(correct === total) {
+            counterLabel.innerText = "🎉 ALL MASTERED! TAP TITLE TO RESET";
+            counterLabel.style.color = "var(--success)";
+        }
+    }
+</script>
+</body>
+</html>
